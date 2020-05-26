@@ -1,3 +1,3 @@
 # newGitTest
 
-Gust for testing.
+Just for testing.
