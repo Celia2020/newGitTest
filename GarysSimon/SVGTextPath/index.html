@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <section>
+    <h1 class="anim">Yo, you see this?</h1>
+  </section>
+  <section>
+    <img class="anim" src="images/Mt Kentama 1.jpg" alt="Mt Kentama">
+    <h1 class="anim">It's darn cool.</h1>
+  </section>
+  <section>
+    <h1 class="anim">I know, right?</h1>
+  </section>
+
+  <!-- Can get svg's clear data code on site: https://jakearchibald.github.io/svgomg/  -->
+  <svg viewBox="0 0 500 500">
+    <style type="text/css">
+      .text {
+        text-transform: uppercase;
+        font-weight: bold;
+        fill: #e6e6e6;
+      }
+    </style>
+    <path id="our-text" fill="#fff" d="M33.5 39.5v429h437v-429h-431" />
+    <text y="40" font-size="30" font-family="Montserrat, Arial">
+      <textPath id="text-path" class="text" href="#our-text" startOffset="400">
+        Yeah, let me check it out real quick
+      </textPath>
+    </text>
+  </svg>
+
+  <script>
+    // Notice: querySelector's target need to bring # or .
+    var textPath = document.querySelector('#text-path');
+
+    function updateTextPathOffset(offset) {
+      textPath.setAttribute('startOffset', offset);
+    }
+
+    function onScroll() {
+      requestAnimationFrame(function () {
+        updateTextPathOffset(window.scrollY * 1.5);
+      })
+    }
+
+    window.addEventListener('scroll', onScroll);
+
+    // Notice: querySelectorAll's target need to bring # or .
+    const titles = document.querySelectorAll('.anim');
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // console.log(entry);
+        if (entry.isIntersecting == true) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      })
+    })
+
+    titles.forEach(title => {
+      observer.observe(title);
+    })
+  </script>
+</body>
+
+</html>
