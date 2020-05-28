@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <section>
+
+  </section>
+  <section class="content">
+
+    <div class="left">
+      <img src="images/yellow.jpg" alt="yellow" class="yellow anim" data-delay="0s">
+      <p class="anim" data-delay="0.5s">I have no clue what I'm doing here LOL!</p>
+      <img src="images/squiggly.svg" alt="squig" class="squig anim" data-delay="0.7s">
+    </div>
+    <div class="right">
+      <div class="anim" data-delay="1s">
+        <h2>Get Yellow</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit nam earum consequuntur voluptatum aliquid
+          praesentium nisi voluptas iste doloremque distinctio?</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // const images = document.querySelector('.anim');
+    const images = document.querySelectorAll('.anim');
+
+    observer = new IntersectionObserver((entries) => {
+      // console.log(entries);
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          // entry.target.style.animation = `anim1 2s forwards ease-out`;
+          entry.target.style.animation = `anim1 2s ${entry.target.dataset.delay} forwards ease-out`;
+        } else {
+          entry.target.style.animation = 'none';
+        }
+      })
+    })
+
+    // observer.observe(images);
+    images.forEach(image => {
+      observer.observe(image);
+    })
+  </script>
+</body>
+
+</html>
