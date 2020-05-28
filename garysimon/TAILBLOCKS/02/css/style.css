@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: 'Nunito';
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 1em 0;
+  margin-bottom: 5em;
+  background: #003afa;
+}
+
+header a {
+  display: block;
+  padding: 0 1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main {
+  margin-right: 5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+:-webkit-any(main, footer) p {
+  color: blue;
+}
+
+:-moz-any(main, footer) p {
+  color: blue;
+}
+
+input:focus-within {
+  background: #ffee00;
+}
+/*# sourceMappingURL=style.css.map */

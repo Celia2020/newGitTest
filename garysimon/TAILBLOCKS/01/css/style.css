@@ -1,0 +1,40 @@
+.light-bg {
+  background: #eae8e8;
+}
+
+.relative {
+  position: relative;
+}
+
+.large-watermark {
+  position: absolute;
+  font-size: 12em;
+  white-space: nowrap;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: .7;
+}
+
+.dark-bg {
+  background: #2e2727;
+}
+
+.dark-bg h2 {
+  color: #fff;
+}
+
+.dark-bg a {
+  cursor: pointer;
+}
+
+.dark-bg a:hover {
+  color: #fff;
+}
+
+.darker-bg {
+  background: #201919;
+}
+
+.darker-bg a {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */

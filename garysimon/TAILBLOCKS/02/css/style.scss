@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: 'Nunito';
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  padding: 1em 0;
+  margin-bottom: 5em;
+  background: rgb(0, 58, 250);
+
+  a {
+    display: block;
+    padding: 0 1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.content {
+  display: flex;
+}
+
+main {
+  margin-right: 5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+// main p,
+// footer p {
+//   color: red;
+// }
+
+// Incompatible in browser
+// :is(main, footer) p {
+//   color: blue;
+// }
+
+// Instead of :is() ↑↑↑  
+// Compatible for Chrome
+:-webkit-any(main, footer) p {
+  color: blue;
+}
+
+// Compatible for Firefox
+:-moz-any(main, footer) p {
+  color: blue;
+}
+
+// body :not(p) {
+//   color: green;
+// }
+
+input:focus-within {
+  background: rgb(255, 238, 0);
+}
