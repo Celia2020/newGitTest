@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+svg {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 1s font-size;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  rect {
+    fill: white;
+    mask: url(#mask);
+  }
+}
+
+video {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+  svg {
+    font-size: 4em;
+  }
+}
