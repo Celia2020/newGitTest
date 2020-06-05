@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>SVG Morph Transition</title>
+</head>
+
+<body>
+  <svg id="morph" height="100%" width="100%" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+    <!-- d="M0-6.5V-60h142.814c18.264-.921 38.16-.93 59.714 0H1918.5v53.5c-33.33-67-144.5-18.5-323-18.5-260.31 0-348 34.5-646-16S755 41.952 444.5-25c-96.32-20.769-176.738-32.185-241.972-35h-59.714C69.435-56.3 22.391-37.881 0-6.5z" -->
+    <path class="morph"
+      d="M0 520V0h1920v599c-33.33-67-133-201-311.5-201-260.31 0-395 295-693 244.5S727.5 348.952 417 282C161 226.8 44.833 457.167 0 520z"
+      fill="#002e3a"></path>
+  </svg>
+
+  <section id="sect1">
+    <h1>Give me a clicky</h1>
+    <p>Go on, go already! Click it ya hear!</p>
+
+    <button id="btn-click">Tappy tappy</button>
+  </section>
+
+  <script>
+    var btn = document.getElementById('btn-click');
+    // var btn2 = document.getElementById('btn2-click');
+    var sect1 = document.getElementById('sect1');
+    // var sect2 = document.getElementById('sect2');
+    var overlay = document.getElementById('morph');
+
+    var morphing = anime({
+      targets: '.morph',
+      d: [{
+          value: 'M0 520V0h1920v599c-33.33-67-133-201-311.5-201-260.31 0-395 295-693 244.5S727.5 348.952 417 282C161 226.8 44.833 457.167 0 520z'
+        },
+        {
+          value: 'M0 1363.5V0h1920v1442.5c-33.33-67-133-201-311.5-201-260.31 0-395 295-693 244.5s-188-293.55-498.5-360.5c-256-55.2-372.167 175.17-417 238z'
+        },
+      ],
+      // easing: 'easeInOutQuint',
+      easing: 'easeInOutSine',
+      duration: 1300,
+      loop: false,
+      // autoplay: false,
+    });
+  </script>
+</body>
+
+</html>
