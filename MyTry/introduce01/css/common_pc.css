@@ -1,0 +1,132 @@
+.sp {
+  display: none !important;
+}
+
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+.header nav {
+  position: relative;
+  right: unset;
+  top: unset;
+}
+
+.header nav .OpenMenu {
+  display: none;
+}
+
+.header nav .mainmenu {
+  width: 80%;
+  min-width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+.menulst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+}
+
+.menulst li {
+  list-style: none;
+  font-weight: bold;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.menulst li a {
+  font-size: 1em;
+  padding: 0 40px 0 80px;
+  color: #333;
+  font-weight: normal;
+}
+
+.menulst li a::before {
+  width: 30px;
+  height: 30px;
+  left: 30px;
+}
+
+.menulst li:nth-child(1) a::before {
+  background: url(../images/menuico_tools_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(2) a::before {
+  background: url(../images/menuico_skills_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(3) a::before {
+  background: url(../images/menuico_langages_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(4) a::before {
+  background: url(../images/menuico_favorites_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(5) a::before {
+  background: url(../images/menuico_exps_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(6) a::before {
+  background: url(../images/menuico_home_blk.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(1):hover a::before {
+  background: url(../images/menuico_tools.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(2):hover a::before {
+  background: url(../images/menuico_skills.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(3):hover a::before {
+  background: url(../images/menuico_langages.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(4):hover a::before {
+  background: url(../images/menuico_favorites.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(5):hover a::before {
+  background: url(../images/menuico_exps.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:nth-child(6):hover a::before {
+  background: url(../images/menuico_home.svg) no-repeat;
+  background-size: cover;
+}
+
+.menulst li:hover, .menulst li:active {
+  border-bottom: 0;
+  -webkit-box-shadow: 0 0 100px #97e3e6 inset;
+          box-shadow: 0 0 100px #97e3e6 inset;
+  background: #263c7c;
+}
+
+.menulst li:hover a:hover, .menulst li:hover a:active, .menulst li:active a:hover, .menulst li:active a:active {
+  color: #fff;
+}
+
+.contactme {
+  display: none !important;
+}
+/*# sourceMappingURL=common_pc.css.map */

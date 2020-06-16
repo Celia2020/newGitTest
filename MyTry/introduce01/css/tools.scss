@@ -1,0 +1,83 @@
+@import url("common.css");
+
+.mainarea{
+  position: relative;
+  width: 90%;
+  margin: 20px 5%;
+  min-height: 800px;
+  div{
+    position: absolute;
+    a{
+      font-size: 0;
+      display: block;
+    }
+    &.btn_code{
+      top: 0;
+      left: 0;
+      a{
+        width: 216px;
+        height: 219px;
+        background: url(../images/btn_Code.svg) no-repeat center;
+        background-size: cover;
+        &:hover,&:active{
+          background: url(../images/btn_Code_hvr.svg) no-repeat center;
+          background-size: cover;
+        }
+      }
+    }
+    &.btn_graph{
+      top: 200px;
+      right: 0;
+      a{
+        width: 229px;
+        height: 189px;
+        background: url(../images/btn_Graph.svg) no-repeat center;
+        background-size: cover;
+        &:hover,&:active{
+          background: url(../images/btn_Graph_hvr.svg) no-repeat center;
+          background-size: cover;
+        }
+      }
+    }
+    &.btn_wiref{
+      top: 400px;
+      left: 0;
+      a{
+        width: 235px;
+        height: 192px;
+        background: url(../images/btn_DesignWireFrame.svg) no-repeat center;
+        background-size: cover;
+        &:hover,&:active{
+          background: url(../images/btn_DesignWireFrame_hvr.svg) no-repeat center;
+          background-size: cover;
+        }
+      }
+    }
+    &.btn_others{
+      top: 620px;
+      right: 0;
+      a{
+        width: 216px;
+        height: 119px;
+        background: url(../images/btn_Others.svg) no-repeat center;
+        background-size: cover;
+        &:hover,&:active{
+          background: url(../images/btn_Others_hvr.svg) no-repeat center;
+          background-size: cover;
+        }
+      }
+    }
+    &.bgrt{
+      top: 80px;
+      right: 40px;
+    }
+    &.bglc{
+      top: 280px;
+      left: 30px;
+    }
+    &.bgrb{
+      top: 520px;
+      right: 40px;
+    }
+  }
+}

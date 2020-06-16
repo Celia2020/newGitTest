@@ -1,0 +1,34 @@
+@import url("common.css");
+
+.maincontents{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  .myinfo{
+    margin-top: 100px;
+    line-height: 3em;
+    .mytxtinfo{
+      h1{
+        color: #212C4F;
+      }
+    }
+  }
+  .OpenMenu{
+    display: block;
+    .HIbtn{
+      font-size: 0;
+      width:  100px;
+      height: 100px;
+      background: url(../images/HIbtn_hvr.svg) no-repeat;
+      background-size: contain;
+      &:hover{
+        cursor: pointer;
+        // background: url(../images/HIbtn_hvr.svg) no-repeat;
+        // background-size: contain;
+      }
+    }
+  }
+  .bg_index{
+    width: 100%;
+  }
+}

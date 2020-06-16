@@ -1,0 +1,19 @@
+@import url("common_pc.css");
+
+.maincontents{
+  display: flex;
+  width: 80%;
+  min-width: 1000px;
+  padding: 0 180px;
+  margin: 0 auto;
+  position: relative;
+  .myinfo{
+    // margin: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    .mytxtinfo{
+      margin-top: 50px;
+    }
+  }
+}

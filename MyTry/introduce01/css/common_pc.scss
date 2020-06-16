@@ -1,0 +1,117 @@
+// common file（ common setting ）
+// common file（ header nav ）
+
+.sp{
+  display: none !important;
+}
+
+a,button{
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.header{
+  nav{
+    position: relative;
+    right: unset;
+    top: unset;
+    .OpenMenu{
+      display: none;
+    }
+    .mainmenu{
+      width: 80%;
+      min-width: 1000px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.menulst{
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-around;
+  margin: 0;
+  li{
+    list-style: none;
+    font-weight: bold;
+    flex-grow: 1;
+    // border-right: 1px solid #ccc;
+    // &:first-child{
+    //   border-left: 1px solid #ccc;
+    // }
+    a{
+      font-size: 1em;
+      padding: 0 40px 0 80px;
+      color: #333;
+      font-weight: normal;
+      &::before{
+        width: 30px;
+        height: 30px;
+        left: 30px;
+      }
+    }
+    &:nth-child(1) a::before{
+      background: url(../images/menuico_tools_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2) a::before{
+      background: url(../images/menuico_skills_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(3) a::before{
+      background: url(../images/menuico_langages_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(4) a::before{
+      background: url(../images/menuico_favorites_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(5) a::before{
+      background: url(../images/menuico_exps_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(6) a::before{
+      background: url(../images/menuico_home_blk.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(1):hover a::before{
+      background: url(../images/menuico_tools.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2):hover a::before{
+      background: url(../images/menuico_skills.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(3):hover a::before{
+      background: url(../images/menuico_langages.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(4):hover a::before{
+      background: url(../images/menuico_favorites.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(5):hover a::before{
+      background: url(../images/menuico_exps.svg) no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(6):hover a::before{
+      background: url(../images/menuico_home.svg) no-repeat;
+      background-size: cover;
+    }
+    &:hover,&:active{
+      border-bottom: 0;
+      box-shadow: 0 0 100px rgb(151, 227, 230) inset;
+      background: rgb(38, 60, 124);
+      // border-bottom: 1px solid #666;
+      a:hover,a:active{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.contactme{
+  display: none !important;
+}

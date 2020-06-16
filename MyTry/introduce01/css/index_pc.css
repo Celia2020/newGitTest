@@ -1,0 +1,25 @@
+@import url("common_pc.css");
+.maincontents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  min-width: 1000px;
+  padding: 0 180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.maincontents .myinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.maincontents .myinfo .mytxtinfo {
+  margin-top: 50px;
+}
+/*# sourceMappingURL=index_pc.css.map */

@@ -1,0 +1,100 @@
+@import url("common.css");
+.mainarea {
+  position: relative;
+  width: 90%;
+  margin: 20px 5%;
+  min-height: 800px;
+}
+
+.mainarea div {
+  position: absolute;
+}
+
+.mainarea div a {
+  font-size: 0;
+  display: block;
+}
+
+.mainarea div.btn_code {
+  top: 0;
+  left: 0;
+}
+
+.mainarea div.btn_code a {
+  width: 216px;
+  height: 219px;
+  background: url(../images/btn_Code.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_code a:hover, .mainarea div.btn_code a:active {
+  background: url(../images/btn_Code_hvr.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_graph {
+  top: 200px;
+  right: 0;
+}
+
+.mainarea div.btn_graph a {
+  width: 229px;
+  height: 189px;
+  background: url(../images/btn_Graph.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_graph a:hover, .mainarea div.btn_graph a:active {
+  background: url(../images/btn_Graph_hvr.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_wiref {
+  top: 400px;
+  left: 0;
+}
+
+.mainarea div.btn_wiref a {
+  width: 235px;
+  height: 192px;
+  background: url(../images/btn_DesignWireFrame.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_wiref a:hover, .mainarea div.btn_wiref a:active {
+  background: url(../images/btn_DesignWireFrame_hvr.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_others {
+  top: 620px;
+  right: 0;
+}
+
+.mainarea div.btn_others a {
+  width: 216px;
+  height: 119px;
+  background: url(../images/btn_Others.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.btn_others a:hover, .mainarea div.btn_others a:active {
+  background: url(../images/btn_Others_hvr.svg) no-repeat center;
+  background-size: cover;
+}
+
+.mainarea div.bgrt {
+  top: 80px;
+  right: 40px;
+}
+
+.mainarea div.bglc {
+  top: 280px;
+  left: 30px;
+}
+
+.mainarea div.bgrb {
+  top: 520px;
+  right: 40px;
+}
+/*# sourceMappingURL=tools.css.map */

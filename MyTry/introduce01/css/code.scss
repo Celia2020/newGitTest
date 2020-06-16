@@ -1,0 +1,139 @@
+@import url("common.css");
+
+.ft_pink{
+  color: #DD3D72;
+}
+.ft_blue{
+  color: #22BAE3;
+}
+
+.contents{
+  position: relative;
+  width: 90%;
+  margin: 20px 5%;
+  overflow: hidden;
+}
+.commonarea{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  p{
+    flex-grow: 10;
+    flex-basis: 10px;
+    color: #999;
+    font-weight: bold;
+    line-height: 2em;
+  }
+  button{
+    flex-grow: 1;
+    flex-basis: 10px;
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    background: url('../images/btn_back.svg') no-repeat center;
+    background-size: cover;
+  }
+}
+.mainarea{
+  margin-top: 40px;
+  section{
+    margin-bottom: 40px;
+    h2{
+      color: #75889B;
+      font-size: 1.6em;
+      padding-left: 60px;
+    }
+    .pct{
+      display: flex;
+      flex-direction: row;
+      div{
+        flex-basis: 50%;
+        flex-grow: 1;
+      }
+      .partlft{
+        .Ppct{
+          height: 12px;
+          margin: 10px 0 0;
+          background: linear-gradient(to right,#EFEFEF,#EFEFBB);
+          border-radius: 50px 0 0 50px;
+          span{
+            font-size: 0;
+            background: linear-gradient(to right,#EC008C,#FC6767);
+            border-radius: 50px 0 0 50px;
+            height: 12px;
+            display: block;
+          }
+        }
+        .normal{
+          font-size: 1.4em;
+          font-weight: bold;
+          text-align: right;
+          padding: 5px 10px;
+          background: linear-gradient(to right,#fff 30%,#FFDFEF);
+        }
+      }
+      .partrgt{
+        .UFpct{
+          height: 12px;
+          margin: 10px 0 0;
+          background: linear-gradient(to right,#EFEFBB,#EFEFEF);
+          border-radius: 0 50px 50px 0;
+          span{
+            font-size: 0;
+            background: linear-gradient(to right,#00F5A0,#00D9F5);
+            border-radius: 0 50px 50px 0;
+            height: 12px;
+            display: block;
+          }
+        }
+        .normal{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          p{
+            width: 70%;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-align: left;
+            padding: 5px 10px;
+            background: linear-gradient(to right,#FDFFAA,#fff);
+          }
+          a.more{
+            padding-top: 5px;
+            display: block;
+            overflow: hidden;
+            button{
+              font-size: 0;
+              background: url(../images/btn_more.svg) no-repeat right;
+              height: 15px;
+              width: 30px;
+              background-size: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+  .fltlyr{
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    margin: 0 -5%;
+    top: 0;
+    height: 100%;
+    .description{
+      position: relative;
+      margin: 50% 10% 50% 5%;
+      background: white;
+      border-radius: 6px;
+      padding: 60px 30px;
+      h2{
+        color: #212C4F;
+      }
+      .subcontents{
+        margin-top: 20px;
+        line-height: 1.4em;
+      }
+    }
+  }
+}

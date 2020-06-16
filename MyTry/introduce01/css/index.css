@@ -1,0 +1,36 @@
+@import url("common.css");
+.maincontents {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.maincontents .myinfo {
+  margin-top: 100px;
+  line-height: 3em;
+}
+
+.maincontents .myinfo .mytxtinfo h1 {
+  color: #212C4F;
+}
+
+.maincontents .OpenMenu {
+  display: block;
+}
+
+.maincontents .OpenMenu .HIbtn {
+  font-size: 0;
+  width: 100px;
+  height: 100px;
+  background: url(../images/HIbtn_hvr.svg) no-repeat;
+  background-size: contain;
+}
+
+.maincontents .OpenMenu .HIbtn:hover {
+  cursor: pointer;
+}
+
+.maincontents .bg_index {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

@@ -12,13 +12,13 @@ console.log(form);
 //Multiple element
 console.log(document.querySelectorAll('.item'));
 // console.log(document.getElementsByClassName('item'));
-// console.log(document.getElementsByTagName('li'));
-
-const item = document.querySelectorAll('.item');
-item.forEach((item) => console.log(item));
+tem.forEach((item) => console.log(item));
 
 const items = document.querySelectorAll('.items');
-items.forEach((item) => console.log(item));
+items.f// console.log(document.getElementsByTagName('li'));
+
+const item = document.querySelectorAll('.item');
+iorEach((item) => console.log(item));
 
 // Real Start for html
 const ul = document.querySelector('.items');
