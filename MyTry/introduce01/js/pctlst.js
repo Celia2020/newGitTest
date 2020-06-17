@@ -20,7 +20,6 @@ function myfuc(e){
   var SpanMarginRightUFpct = document.querySelector('#' + IDarray + ' .UFpct span').style.marginRight = `${100 - UFpct}%`;
 }
 
-
 // floating layer show //
 //
 var btnMores = document.querySelectorAll(".more");
