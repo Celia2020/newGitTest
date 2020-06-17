@@ -21,5 +21,13 @@
 <stop stop-color="#ECE9E6"/>
 <stop offset="1" stop-color="white"/>
 </linearGradient>
+<linearGradient id="paint2_linear" x1="246" y1="24" x2="297" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ECE9E6"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="300" y1="24" x2="358" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ECE9E6"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
 </defs>
 </svg>

@@ -17,6 +17,15 @@ body {
   position: relative;
 }
 
+.hidesvg {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
 button, a {
   background-color: rgba(0, 0, 0, 0);
   border-color: rgba(0, 0, 0, 0);
@@ -218,7 +227,7 @@ a.myemail:hover {
 }
 
 .maincontents {
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .maincontents .keyvisual {
@@ -227,5 +236,54 @@ a.myemail:hover {
 
 .maincontents .keyvisual img {
   width: 100%;
+}
+
+.contents {
+  position: relative;
+  width: 90%;
+  margin: 20px 5%;
+  overflow: hidden;
+}
+
+.contents .commonarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contents .commonarea p {
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+  -ms-flex-preferred-size: 10px;
+      flex-basis: 10px;
+  color: #999;
+  font-weight: bold;
+  line-height: 2em;
+}
+
+.contents .commonarea button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 10px;
+      flex-basis: 10px;
+  font-size: 0;
+  width: 60px;
+  height: 60px;
+  background: url("../images/btn_back.svg") no-repeat center;
+  background-size: cover;
+}
+
+.contents .commonarea button:hover {
+  background: url("../images/btn_back_hvr.svg") no-repeat center;
+  background-size: cover;
 }
 /*# sourceMappingURL=common.css.map */

@@ -1,0 +1,13 @@
+.mainarea .fltlyr {
+  width: 105%;
+}
+
+.mainarea .fltlyr .description {
+  margin: 15% 10% 0 5%;
+  padding: 60px 100px;
+}
+
+.mainarea .fltlyr .description svg {
+  left: 95px;
+}
+/*# sourceMappingURL=pctlst_pc.css.map */

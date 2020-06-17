@@ -20,6 +20,14 @@ body {
   position: relative;
 }
 
+.hidesvg{
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
 button,a {
   // color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
@@ -187,11 +195,43 @@ a.myemail{
 }
 
 .maincontents{
-  padding-top: 100px;
+  padding-top: 60px;
   .keyvisual{
     width: 100%;
     img{
       width: 100%;
+    }
+  }
+}
+
+.contents{
+  position: relative;
+  width: 90%;
+  margin: 20px 5%;
+  overflow: hidden;
+  .commonarea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p{
+      flex-grow: 10;
+      flex-basis: 10px;
+      color: #999;
+      font-weight: bold;
+      line-height: 2em;
+    }
+    button{
+      flex-grow: 1;
+      flex-basis: 10px;
+      font-size: 0;
+      width: 60px;
+      height: 60px;
+      background: url('../images/btn_back.svg') no-repeat center;
+      background-size: cover;
+      &:hover{
+        background: url('../images/btn_back_hvr.svg') no-repeat center;
+        background-size: cover;
+      }
     }
   }
 }
