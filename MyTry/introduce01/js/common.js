@@ -17,6 +17,6 @@ CloseMenu.forEach((closebtn) =>
 var CloseMenu = document.querySelectorAll(".closeself");
 CloseMenu.forEach((closeself) =>
   closeself.addEventListener("click", (e) => {
-    document.querySelector(".closeself").style.display = "none";
+    closeself.style.display = "none";
   })
 );

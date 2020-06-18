@@ -1,0 +1,6 @@
+      <div class="commonarea">
+        <p>
+          ※ <span class="ft_pink">P</span> : Proficiency<br>
+          <span class="ft_blue">　UF</span> : Usage Frequency</p>
+        <a class="backbtn" href="javascript:history.go(-1)"><button>back</button></a>
+      </div>

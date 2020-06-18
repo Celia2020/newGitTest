@@ -57,6 +57,10 @@ a.myemail{
   padding-bottom: 10px;
   z-index: 999;
   width: 100%;
+  // box-shadow: 1px 1px 5px #ccc;
+  // &.noshadow{
+  //   box-shadow: none;
+  // }
   .contactme{
     display: flex;
     flex-direction: row;
@@ -195,7 +199,7 @@ a.myemail{
 }
 
 .maincontents{
-  padding-top: 60px;
+  padding-top: 45px;
   .keyvisual{
     width: 100%;
     img{

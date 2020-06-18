@@ -1,7 +1,7 @@
   <div class="header">
     <div class="contactme">
       <div class="myphoto">
-        <img src="images/Img_header.svg" alt="Myphoto">
+        <a href="index.html"><img src="images/Img_header.svg" alt="Myphoto"></a>
       </div>
       <div class="mytxtinfo">
         <h1>Bessie Fisher</h1>
@@ -123,7 +123,7 @@
     <use xlink:href="#image16" transform="translate(-0.021164) scale(0.00529101 0.00505051)"/>
     </pattern>
     <pattern id="icon_Firefox" patternContentUnits="objectBoundingBox" width="1" height="1">
-    <use xlink:href="#image17" transform="translate(-0.0201593) scale(0.00182512)"/>
+    <use xlink:href="#image17" transform="translate(-0.006) scale(0.0017)"/>
     </pattern>
     <pattern id="icon_Fireworks" patternContentUnits="objectBoundingBox" width="1" height="1">
     <use xlink:href="#image18" transform="scale(0.00826446)"/>
