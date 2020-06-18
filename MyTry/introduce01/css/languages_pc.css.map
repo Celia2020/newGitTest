@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,oBAAI;AACZ,OAAO,CAAC,oBAAI",
+    "sources": [
+        "languages_pc.scss"
+    ],
+    "names": [],
+    "file": "languages_pc.css"
+}

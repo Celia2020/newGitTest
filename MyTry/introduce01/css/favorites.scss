@@ -1,0 +1,40 @@
+@import url("common.css");
+
+.commonarea{
+  p{
+    font-size: 0;
+  }
+}
+
+.mainarea{
+  width: 100%;
+  overflow: hidden;
+  ul{
+    display: flex;
+    flex-direction: column;
+    li{
+      display: flex;
+      font-display: row;
+      h2{
+        width: 40%;
+        margin-right: 5%;
+        padding-top: 40px;
+        font-size: 4.2vw;
+        background: linear-gradient(145.82deg, #19E7D7 0%, #306CF5 99.01%);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      img{
+        width: 55%;
+      }
+      &:nth-child(even){
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        h2{
+          margin-right: 0;
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}

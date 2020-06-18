@@ -1,0 +1,55 @@
+@import url("common.css");
+.commonarea p {
+  font-size: 0;
+}
+
+.mainarea {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainarea ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainarea ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-display: row;
+}
+
+.mainarea ul li h2 {
+  width: 40%;
+  margin-right: 5%;
+  padding-top: 40px;
+  font-size: 4.2vw;
+  background: linear-gradient(145.82deg, #19E7D7 0%, #306CF5 99.01%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.mainarea ul li img {
+  width: 55%;
+}
+
+.mainarea ul li:nth-child(even) {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.mainarea ul li:nth-child(even) h2 {
+  margin-right: 0;
+  margin-left: 5%;
+}
+/*# sourceMappingURL=favorites.css.map */

@@ -1,0 +1,16 @@
+@import url("common.css");
+@import url("pctlst.css");
+
+.mainarea section {
+  h2{
+    padding-left: 0;
+  }
+  .pct {
+    .partlft .Ppct span{
+      background: linear-gradient(90deg, #FF4E50 0%, #F9D423 100%);
+    }
+    .partrgt .UFpct span{
+      background: linear-gradient(90deg, #56CCF2 0%, #2F80ED 100%);
+    }
+  }
+}

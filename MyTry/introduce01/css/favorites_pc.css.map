@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,oBAAI;AACZ,OAAO,CAAC,oBAAI",
+    "sources": [
+        "favorites_pc.scss"
+    ],
+    "names": [],
+    "file": "favorites_pc.css"
+}

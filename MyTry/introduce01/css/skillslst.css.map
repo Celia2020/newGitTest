@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,iBAAI;AACZ,OAAO,CAAC,iBAAI",
+    "sources": [
+        "skillslst.scss"
+    ],
+    "names": [],
+    "file": "skillslst.css"
+}
