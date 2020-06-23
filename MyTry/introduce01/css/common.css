@@ -228,6 +228,9 @@ a.myemail:hover {
 
 .maincontents {
   padding-top: 45px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
 }
 
 .maincontents .keyvisual {
@@ -269,7 +272,7 @@ a.myemail:hover {
   line-height: 2em;
 }
 
-.contents .commonarea button {
+button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -282,8 +285,18 @@ a.myemail:hover {
   background-size: cover;
 }
 
-.contents .commonarea button:hover {
+button:hover {
   background: url("../images/btn_back_hvr.svg") no-repeat center;
+  background-size: cover;
+}
+
+button.nextbtn {
+  background: url("../images/btn_next.svg") no-repeat center;
+  background-size: cover;
+}
+
+button.nextbtn:hover {
+  background: url("../images/btn_next_hvr.svg") no-repeat center;
   background-size: cover;
 }
 /*# sourceMappingURL=common.css.map */
