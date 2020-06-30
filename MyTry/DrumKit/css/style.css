@@ -1,0 +1,63 @@
+.keyvisual h1 {
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e20000), to(#043a3a));
+  background: linear-gradient(to bottom, #e20000, #043a3a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.maincontents {
+  width: 100%;
+}
+
+.maincontents .keyboard {
+  margin: 20px 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  justify-items: center;
+}
+
+.maincontents .keyboard li {
+  list-style: none;
+  width: 12%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3a2929), to(#043a3a));
+  background: linear-gradient(to bottom, #3a2929, #043a3a);
+}
+
+.maincontents .keyboard li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.6em;
+}
+
+.maincontents .keyboard li a p span {
+  font-size: .6em;
+}
+
+.maincontents .keyboard li audio {
+  display: none;
+}
+
+.maincontents .keyboard li:hover {
+  outline: #df3 solid;
+}
+
+.maincontents .keyboard li.keydown {
+  width: 14%;
+  outline: #ff00ea solid;
+}
+
+.maincontents .keyboard li.keydown a {
+  font-size: 2em;
+}
+/*# sourceMappingURL=style.css.map */
