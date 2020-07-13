@@ -4,9 +4,348 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script charset="UTF-8" type="text/javascript" src="https://img.travel.rakuten.co.jp/share/common/js/lib/jquery/jquery.js"></script>
 </head>
 <body>
+<style>
+  div{
+    position: relative;
+    width: 100%;
+  }
+  h1{
+    /* display: none; */
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  p{
+    /* display: none; */
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+<div class="test">
+
+
+<ul id="show1">
+  <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+  <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+  <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+  <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+  <li><a href="javascript:void(0)">show1</a></li>
+</ul>
   
-  <script type="javascript" src="jds_javascript.min.js"></script>
+<script>
+  var temp = document.getElementById("show1");
+  var tempTN = temp.getElementsByTagName("*");
+  var tempLgth = tempTN.length;
+  console.log("tempLgth ="+tempLgth);
+  for(let i=0; i<tempLgth; i++){
+    console.log(tempTN[i]); 
+    document.write(typeof tempTN[i]);
+  }
+</script>
+
+
+  <ul id="show2">
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)">show2</a></li>
+  </ul>
+  <ul id="show3">
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)">show3</a></li>
+  </ul>
+  <ul id="show4">
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)"><img src="images/favicon.ico" alt="ico"></a></li>
+    <li><a href="javascript:void(0)">show4</a></li>
+  </ul>
+  <div>
+    <h1 class="jss_showFix" fixY="show2">ShowFix 111</h1>
+    <!-- <p class="jss_showFix" fixY="show4">ShowFix 222</p> -->
+  </div>
+</div>
+
+
+
+<script>
+
+var temp = document.getElementById("show1");
+var tempTN = temp.getElementsByTagName("*");
+var tempLgth = tempTN.length;
+console.log("tempLgth ="+tempLgth);
+for(let i=0; i<tempLgth; i++){
+  console.log(tempTN[i]); 
+  document.write(typeof tempTN[i]);
+}
+
+"use strict";
+function _extends() {
+  return (
+    (_extends =
+      // Object.assign(target, source) 結果為在target的基礎上接納source的所有數據，重複類型將以source爲準被覆蓋。
+      Object.assign ||
+      function (a) {
+        for (var b, c = 1; c < arguments.length; c++)
+          for (var d in ((b = arguments[c]), b))
+            // Object.prototype.hasOwnProperty.call（） 返回布爾值，也就是後面括號内是否有值（有：ture/1; 無：false/0）
+            Object.prototype.hasOwnProperty.call(b, d) && (a[d] = b[d]);
+        return a;
+      }),
+    // _extends.apply()   _extends繼承this的相關屬性（這裏是arguments）
+    _extends.apply(this, arguments)  
+  );
+}
+function _classCallCheck(a, b) {
+  // instanceof 返回布爾值，用來檢驗b是否存在a的原型鏈上（即：b的結構是否完全等同於a）
+  if (!(a instanceof b))
+    throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(a, b) {
+  for (var c, d = 0; d < b.length; d++)
+    (c = b[d]),
+      (c.enumerable = c.enumerable || !1),
+      (c.configurable = !0),
+      "value" in c && (c.writable = !0),
+      // Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
+      // Object.defineProperty(a, c.key, c)  對象a的新屬性c.key的值為c
+      Object.defineProperty(a, c.key, c);
+}
+function _createClass(a, b, c) {
+  return (
+    b && _defineProperties(a.prototype, b), c && _defineProperties(a, c), a
+  );
+}
+function _defineProperty(a, b, c) {
+  return (
+    b in a
+      ? Object.defineProperty(a, b, {
+          value: c,
+          enumerable: !0,
+          configurable: !0,
+          writable: !0,
+        })
+      : (a[b] = c),
+    a
+  );
+}
+var JDS = (function () {
+  function a() {
+    var b = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {};
+    _classCallCheck(this, a),
+      _defineProperty(this, "V", "2.0.5"),
+      _defineProperty(this, "W", parseInt($(window).width())),
+      _defineProperty(
+        this,
+        "J",
+        "  ____    ____\n /',__\\  /',__\\\n/\\__, `\\/\\__, `\\\n\\/\\____/\\/\\____/\n \\/___/  \\/___/"
+      ),
+      _defineProperty(this, "opt", {}),
+      _defineProperty(this, "urlParams", {}),
+      _defineProperty(this, "tileTime", null),
+      (this.opt = _extends(
+        {
+          angaAnimaSpeed: 600,
+          angaAnimaMoreY: 0,
+          lazyOn: !1,
+          tilePC: null,
+          tileSP: null,
+        },
+        b
+      )),
+      (this.opt.angaAnimaSpeed = parseInt(this.opt.angaAnimaSpeed)),
+      (this.opt.angaAnimaMoreY = parseInt(this.opt.angaAnimaMoreY)),
+      isNaN(this.opt.angaAnimaMoreY) && (this.opt.angaAnimaMoreY = 0),
+      this.init();
+  }
+  return (
+    _createClass(a, [
+      {
+        key: "plus",
+        value: function plus(a) {
+          var b =
+            1 < arguments.length && void 0 !== arguments[1]
+              ? arguments[1]
+              : "https://code.jquery.com/jquery-3.3.1.min.js";
+          jQuery.getScript(b, function () {
+            var b = $.noConflict(!0);
+            (function (b) {
+              a && a(b);
+            })(b);
+          });
+        },
+      },
+      {
+        key: "getAttrSet",
+        value: function getAttrSet(a, b, c, d, e) {
+          var f = $(a).attr(b);
+          return f
+            ? (!0 == d && (f = "#" + f), !0 == e && (f = parseInt(f)), f)
+            : c;
+        },
+      },
+      {
+        key: "init",
+        value: function init() {
+          var a = this;
+          // this.tileRun(),
+          //   this.animate(),
+          //   this.wow(),
+          //   this.skrollr(),
+          //   this.lazy(),
+          //   this.photoThumbnail(),
+          //   this.slides(),
+          //   this.tabBox(),
+          //   this.swiper(),
+          //   this.multiCheck(),
+          //   this.singleCheck(),
+          //   this.coponSwitch(),
+          //   this.searchRight(),
+          //   this.searchLight(),
+          //   this.megaMenu(),
+          //   this.mapList(),
+          //   this.smartMenu(),
+          //   this.macy(),
+          //   this.angaAnima(),
+          //   this.imgOver(),
+          //   this.baguetteBox(),
+          //   this.colorBox(),
+          //   this.switchMenu(),
+          //   this.detialPopUp(),
+          //   this.couponPopUp(),
+            (window.onload = function () {
+              if ((a.initOnload(), a.opt.skrollrOn)) skrollr.init();
+            });
+        },
+      },
+      {
+        key: "initOnload",
+        value: function initOnload() {
+          // this.angaAnimaLoad(),
+            this.showFix();
+            // this.alwaysFix(),
+            // this.triggerClick(),
+            // this.searchSp(),
+            // this.angaLoad();
+        },
+      },
+      {
+        key: "showFix",
+        value: function showFix() {
+          // 頁面裏存在.jss_showFix時，$(".jss_showFix").length 起碼大於等於1
+          // (0 >= $(".jss_showFix").length)  就等於0
+          // if（！0）  就等於 if（true) 因此進入if語句
+          // 反之，沒有.jss_showFix時，直接跳過if語句
+          if (!(0 >= $(".jss_showFix").length)) {
+            var a = this;
+            $(".jss_showFix").each(function (b) {
+              // b是所有.jss_showFix的array，利用each的情況下，按順序從0起計
+              // 因此，在存在多個.jss_showFix的頁面中，該語句可以分別為不同對象的.jss_showFix增加不同class名以便區別處理
+              $(this).addClass("jss_showFix" + (b + 1)),
+                $(".jss_showFix" + (b + 1)).Plugin_ShowFix({
+                  fixY: "#" + $(this).attr("fixY"),
+                  showOnly: a.getAttrSet(this, "showOnly", !1, !0),
+                });
+            });
+          }
+        },
+      },
+    ]),
+    a
+  );
+})();
+  (function (a) {
+    var b = function (b, c) {
+      (this.$ele = b),
+        (this.timer = null),
+        (this._rt = ".rt-header"),
+        (this.defaults = {
+          fixY: "body",
+          showSpeed: 300,
+          showOnly: !1,
+          moreDO: function moreDO() {},
+        }),
+        (this.options = a.extend({}, this.defaults, c));
+    };
+    (b.prototype = {
+      scrollMe: function scrollMe() {
+        // 判斷是否存在length意味著判斷是否執行語句
+        // && 后則直接為執行對象賦（初始）值, 本代碼中賦予對象在當前窗口所在高度值
+        // 這是縮略寫法，這裏的&&用法并不是希望左右兩邊都符合條件的用法
+        0 < a(this.options.fixY).length &&
+          ((this._fixY = a(this.options.fixY).offset().top),
+          // 這裏的a指代對象所在當前窗口，因此a(document)就是window
+          // a(document).scrollTop()即當前窗口的滾動條位置
+          a(document).scrollTop() > this._fixY
+            // 這裏開始是儅 a(document).scrollTop() > this._fixY 為true的情況下執行的語句
+            ? (this.$ele.addClass("active"),
+              // is(":hidden") 判斷是否為隱藏屬性對象
+              a(this.$ele).is(":hidden")
+              // fadeIn 儅對象隱藏前提下開啓淡入效果，括號内為透明度由0到1的時長，按毫秒記
+                ? this.$ele.fadeIn(this.options.showSpeed)
+                : this.$ele.fadeIn(0))
+            // 這裏開始是儅 a(document).scrollTop() > this._fixY 為false的情況下執行的語句
+            : (this.$ele.removeClass("active"),
+              a(this.$ele).is(":hidden")
+              // fadeOut 儅對象顯示前提下開啓淡出效果，括號内為透明度由1到0的時長，按毫秒記
+                ? this.$ele.fadeOut(0)
+                : this.$ele.fadeOut(this.options.showSpeed)));
+
+                
+        0 < a(this.options.showOnly).length &&
+          (a(document).scrollTop() + a(window).height() >
+          a(this.options.showOnly).offset().top +
+            a(this.options.showOnly).height()
+            ? (this.$ele.addClass("active2"),
+              this.$ele.css({ position: "absolute" }))
+            : (this.$ele.removeClass("active2"),
+              this.$ele.css({ position: "fixed" })));
+      },
+      windowScroll: function windowScroll() {
+        this.$ele.hide();
+        var b = this;
+        b.scrollMe(this.$ele);
+        a(window).width();
+        b.scrollMe(b.$ele),
+          a(window).scroll(function () {
+            b.scrollMe(b.$ele);
+          });
+      },
+    }),
+      (a.fn.Plugin_ShowFix = function (a) {
+        var c = new b(this, a);
+        return c.windowScroll(), this;
+      });
+  })(jQuery),
+  $(document).ready(function () {});
+
+
+  var jds= new JDS();
+
+
+</script>
+
+
+
+
+
+
+  <!-- <script type="javascript" src="jds_javascript.min.js"></script>
+  <script type="javascript" src="app.min.js"></script>
+  <script type="javascript" src="jds.v2.min.js"></script>
+  <script type="javascript" src="sticky.min.js"></script>
+  <script type="javascript" src="ss.v2.min.0420.js"></script> -->
 </body>
 </html>

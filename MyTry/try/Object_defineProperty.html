@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico">
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+
+/////////////      ===  基礎  ===  Object.defineProperty start      ////////////////<<<<<
+
+        // 使用 __proto__
+        var obj = {};
+        var descriptor = Object.create(null); // 没有继承的属性
+        // 默认没有 enumerable，没有 configurable，没有 writable
+        descriptor.value = 'static';
+        Object.defineProperty(obj, 'key', descriptor);
+
+        // 显式
+        Object.defineProperty(obj, "key", {
+          enumerable: false,
+          configurable: false,
+          writable: false,
+          value: "static"
+        });
+
+//  ????  >>>>>  沒看懂 start  >>>>>  -------  需要確認 || 和 && 的使用方法  -------  <<<<<  ????  //
+        // 循环使用同一对象
+        function withValue(value) {
+          var d = withValue.d || (
+            withValue.d = {
+              enumerable: false,
+              writable: false,
+              configurable: false,
+              value: null
+            }
+          );
+          d.value = value;
+          return d;
+        }
+        // ... 并且 ...
+        Object.defineProperty(obj, "key", withValue("static"));
+
+        // 如果 freeze 可用, 防止后续代码添加或删除对象原型的属性
+        // （value, get, set, enumerable, writable, configurable）
+        (Object.freeze||Object)(Object.prototype);
+//  ????  >>>>>  沒看懂 end  >>>>>  -------  需要確認 || 和 && 的使用方法  -------  <<<<<  ????  //
+
+/////////////      ===  基礎  ===  Object.defineProperty end      ////////////////>>>>>
+
+
+
+/////////////      ===  创建属性  ===  Object.defineProperty start      ////////////////>>>>>
+
+        var o = {}; // 创建一个新对象
+
+        // 在对象中添加一个属性与数据描述符的示例
+        Object.defineProperty(o, "a", {
+          value : 37,
+          writable : true,
+          enumerable : true,
+          configurable : true
+        });
+        console.log(o);
+        // 对象 o 拥有了属性 a，值为 37
+
+        // 在对象中添加一个设置了存取描述符属性的示例
+        var bValue;
+        Object.defineProperty(o, "b", {
+          // 使用了方法名称缩写（ES2015 特性）
+          // 下面两个缩写等价于：
+          // get : function() { return bValue; },
+          // set : function(newValue) { bValue = newValue; },
+          get() { return bValue; },
+          set(newValue) { bValue = newValue; },
+          enumerable : true,
+          configurable : true
+        });
+        // bValue = 38;    這時候o.b的值為 38
+        // newValue = 38;    這時候o.b的值為 undefined
+        console.log(o.b); 
+        // 对象 o 拥有了属性 b，值为 38
+        // 现在，除非重新定义 o.b，o.b 的值总是与 bValue 相同
+
+
+        // 数据描述符和存取描述符不能混合使用
+        Object.defineProperty(o, "conflict", {
+          value: 0x9f91102,
+          get() { return 0xdeadbeef; } 
+        });
+        // 抛出错误 TypeError: value appears only in data descriptors, get appears only in accessor descriptors
+
+/////////////      ===  创建属性  ===  Object.defineProperty end      ////////////////>>>>>
+
+
+
+/////////////      ===  修改属性  ===  Object.defineProperty start      ////////////////>>>>>
+
+    // Writable 属性
+    // 当 writable 属性设置为 false 时，该属性被称为“不可写的”。它不能被重新赋值。
+      var oo = {}; // 创建一个新对象
+      Object.defineProperty(oo, 'a', {
+        value: 37,
+        writable: false
+      });
+      console.log(oo.a); // logs 37
+      oo.a = 25; // No error thrown
+      // (it would throw in strict mode,
+      // even if the value had been the same)
+      console.log(oo.a); // logs 37. The assignment didn't work.
+      
+      // strict mode
+      (function() {
+        'use strict';
+        var ob = {};
+        Object.defineProperty(ob, 'b', {
+          value: 2,
+          writable: false
+        });
+        // ob.b = 3; // throws TypeError: "b" is read-only
+        return ob.b; // returns 2 without the line above
+      }());
+
+
+    // Enumerable 属性
+    // enumerable 定义了对象的属性是否可以在 for...in 循环和 Object.keys() 中被枚举。
+      var oe = {};
+      Object.defineProperty(oe, "a", { value : 1, enumerable: true });
+      Object.defineProperty(oe, "b", { value : 2, enumerable: false });
+      Object.defineProperty(oe, "c", { value : 3 }); // enumerable 默认为 false
+      oe.d = 4; // 如果使用直接赋值的方式创建对象的属性，则 enumerable 为 true
+      Object.defineProperty(oe, Symbol.for('e'), {
+        value: 5,
+        enumerable: true
+      });
+      Object.defineProperty(oe, Symbol.for('f'), {
+        value: 6,
+        enumerable: false
+      });
+
+      for (var i in oe) {
+        console.log(i);
+      }
+      // logs 'a' and 'd' (in undefined order)
+
+      Object.keys(oe); // ['a', 'd']
+
+      oe.propertyIsEnumerable('a'); // true
+      oe.propertyIsEnumerable('b'); // false
+      oe.propertyIsEnumerable('c'); // false
+      oe.propertyIsEnumerable('d'); // true
+      oe.propertyIsEnumerable(Symbol.for('e')); // true
+      oe.propertyIsEnumerable(Symbol.for('f')); // false
+
+      var p = { ...oe }
+      p.a // 1
+      p.b // undefined
+      p.c // undefined
+      p.d // 4
+      p[Symbol.for('e')] // 5
+      p[Symbol.for('f')] // undefined
+
+    
+    // Configurable 属性
+    // configurable 特性表示对象的属性是否可以被删除，以及除 value 和 writable 特性外的其他特性是否可以被修改。
+      var o = {};
+      Object.defineProperty(o, 'a', {
+        get() { return 1; },
+        configurable: false
+      });
+
+      Object.defineProperty(o, 'a', {
+        configurable: true
+      }); // throws a TypeError
+      Object.defineProperty(o, 'a', {
+        enumerable: true
+      }); // throws a TypeError
+      Object.defineProperty(o, 'a', {
+        set() {}
+      }); // throws a TypeError (set was undefined previously)
+      Object.defineProperty(o, 'a', {
+        get() { return 1; }
+      }); // throws a TypeError
+      // (even though the new get does exactly the same thing)
+      Object.defineProperty(o, 'a', {
+        value: 12
+      }); // throws a TypeError // ('value' can be changed when 'configurable' is false but not in this case due to 'get' accessor)
+
+      console.log(o.a); // logs 1
+      delete o.a; // Nothing happens
+      console.log(o.a); // logs 1
+
+
+    // 添加多个属性和默认值
+    // 考虑特性被赋予的默认特性值非常重要，通常，使用点运算符和 Object.defineProperty() 为对象的属性赋值时，数据描述符中的属性默认值是不同的，如下例所示。
+      var o = {};
+      o.a = 1;
+      // 等同于：
+      Object.defineProperty(o, "a", {
+        value: 1,
+        writable: true,
+        configurable: true,
+        enumerable: true
+      });
+
+      // 另一方面，
+      Object.defineProperty(o, "a", { value : 1 });
+      // 等同于：
+      Object.defineProperty(o, "a", {
+        value: 1,
+        writable: false,
+        configurable: false,
+        enumerable: false
+      });
+      
+
+    // 自定义 Setters 和 Getters
+    // 下面的例子展示了如何实现一个自存档对象。当设置temperature 属性时，archive 数组会收到日志条目。
+      function Archiver() {
+        var temperature = null;
+        var archive = [];
+        Object.defineProperty(this, 'temperature', {
+          get: function() {
+            console.log('get!');
+            return temperature;
+          },
+          set: function(value) {
+            temperature = value;
+            archive.push({ val: temperature });
+          }
+        });
+        this.getArchive = function() { return archive; };
+      }
+      var arc = new Archiver();
+      arc.temperature; // 'get!'
+      arc.temperature = 11;
+      arc.temperature = 13;
+      arc.getArchive(); // [{ val: 11 }, { val: 13 }]
+
+      // 下面这个例子中，getter 总是会返回一个相同的值。
+      var pattern = {
+          get: function () {
+              return 'I alway return this string,whatever you have assigned';
+          },
+          set: function () {
+              this.myname = 'this is my name string';
+          }
+      };
+      function TestDefineSetAndGet() {
+          Object.defineProperty(this, 'myproperty', pattern);
+      }
+      var instance = new TestDefineSetAndGet();
+      instance.myproperty = 'test';
+
+      // 'I alway return this string,whatever you have assigned'
+      console.log(instance.myproperty);
+      // 'this is my name string'
+      console.log(instance.myname);继承属性
+
+
+/////////////      ===  修改属性  ===  Object.defineProperty end      ////////////////>>>>>
+
+
+
+
+/////////////      ===  继承属性  ===  Object.defineProperty start      ////////////////<<<<<
+
+    // sample 1
+    // 它的 get 和 set 方法会在子对象的属性被访问或者修改时被调用。如果这些方法用一个变量存值，该值会被所有对象共享。
+      function myclass() {}
+      var value;
+      Object.defineProperty(myclass.prototype, "x", {
+        get() {
+          return value;
+        },
+        set(x) {
+          value = x;
+        },
+      });
+
+      var a = new myclass();
+      var b = new myclass();
+      a.x = 1;
+      console.log(b.x); // 1
+
+
+    // sample 2
+    // 在 get 和 set 方法中，this 指向某个被访问和修改属性的对象。
+      function myclass() {}
+      Object.defineProperty(myclass.prototype, "y", {
+        get() {
+          return this.stored_y;
+        },
+        set(y) {
+          this.stored_y = y;
+        }
+      });
+
+      var a = new myclass();
+      var b = new myclass();
+      a.y = 1;
+      console.log(b.y); // undefined
+
+
+    // sample 3
+    // 不像访问者属性，值属性始终在对象自身上设置，而不是一个原型。然而，如果一个不可写的属性被继承，它仍然可以防止修改对象的属性。
+    function myclass() {}
+    myclass.prototype.ax = 1;
+    Object.defineProperty(myclass.prototype, "ay", {
+      writable: false,
+      value: 1
+    });
+
+    var a = new myclass();
+    a.ax = 2;
+    console.log(a.ax); // 2
+    console.log(myclass.prototype.ax); // 1
+    a.ay = 2; // Ignored, throws in strict mode
+    console.log(a.ay); // 1
+    console.log(myclass.prototype.ay); // 1
+
+/////////////      ===  继承属性  ===  Object.defineProperty end      ////////////////>>>>>
+
+
+    </script>
+  </body>
+</html>

@@ -2,17 +2,21 @@
 function _extends() {
   return (
     (_extends =
+      // Object.assign(target, source) 結果為在target的基礎上接納source的所有數據，重複類型將以source爲準被覆蓋。
       Object.assign ||
       function (a) {
         for (var b, c = 1; c < arguments.length; c++)
           for (var d in ((b = arguments[c]), b))
+            // Object.prototype.hasOwnProperty.call（） 返回布爾值，也就是後面括號内是否有值（有：ture/1; 無：false/0）
             Object.prototype.hasOwnProperty.call(b, d) && (a[d] = b[d]);
         return a;
       }),
-    _extends.apply(this, arguments)
+    // _extends.apply()   _extends繼承this的相關屬性（這裏是arguments）
+    _extends.apply(this, arguments)  
   );
 }
 function _classCallCheck(a, b) {
+  // instanceof 返回布爾值，用來檢驗b是否存在a的原型鏈上（即：b的結構是否完全等同於a）
   if (!(a instanceof b))
     throw new TypeError("Cannot call a class as a function");
 }
@@ -22,6 +26,8 @@ function _defineProperties(a, b) {
       (c.enumerable = c.enumerable || !1),
       (c.configurable = !0),
       "value" in c && (c.writable = !0),
+      // Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
+      // Object.defineProperty(a, c.key, c)  對象a的新屬性c.key的值為c
       Object.defineProperty(a, c.key, c);
 }
 function _createClass(a, b, c) {
@@ -211,9 +217,15 @@ var SS = (function () {
       {
         key: "showFix",
         value: function showFix() {
+          // 頁面裏存在.jss_showFix時，$(".jss_showFix").length 起碼大於等於1
+          // (0 >= $(".jss_showFix").length)  就等於0
+          // if（！0）  就等於 if（true) 因此進入if語句
+          // 反之，沒有.jss_showFix時，直接跳過if語句
           if (!(0 >= $(".jss_showFix").length)) {
             var a = this;
             $(".jss_showFix").each(function (b) {
+              // b是所有.jss_showFix的array，利用each的情況下，按順序從0起計
+              // 因此，在存在多個.jss_showFix的頁面中，該語句可以分別為不同對象的.jss_showFix增加不同class名以便區別處理
               $(this).addClass("jss_showFix" + (b + 1)),
                 $(".jss_showFix" + (b + 1)).Plugin_ShowFix({
                   fixY: "#" + $(this).attr("fixY"),
@@ -999,14 +1011,14 @@ var SS = (function () {
           i.removeAttribute && i.removeAttribute("height");
       }),
       this.each(function (c) {
-        (f = c % b),
-          0 == f && (d = []),
-          (d[f] = a(this)),
-          (g = d[f].height()),
-          (0 == f || g > e) && (e = g),
-          (c == j || f == b - 1) &&
-            a.each(d, function () {
-              this.height(e);
+        (f = c % b),  // 取模，判斷是一行裏的第幾位或者整體裏的第幾位
+          0 == f && (d = []),  // 爲零，該行到此爲止，給到當前行高度后高度清零，後續另外存高度；不爲零，則繼續給當前高度    另外定義d數組
+          (d[f] = a(this)),  // 將本體全部付給d數組
+          (g = d[f].height()),  // 把當前對象高度付給g
+          (0 == f || g > e) && (e = g),  // 判斷是不是到此爲止，或者是不是當前對象高度大於前對象高度，同時把當前對象高度保存到前次對象高度裏
+          (c == j || f == b - 1) &&  // 判斷是不是到最後一個對象了，或者是不是到限制行最後一個對象了
+            a.each(d, function () {  // d數組循環取最高值
+              this.height(e);  // 付最高值
             });
       })
     );
@@ -1096,17 +1108,29 @@ var SS = (function () {
     };
     (b.prototype = {
       scrollMe: function scrollMe() {
+        // 判斷是否存在length意味著判斷是否執行語句
+        // && 后則直接為執行對象賦（初始）值, 本代碼中賦予對象在當前窗口所在高度值
+        // 這是縮略寫法，這裏的&&用法并不是希望左右兩邊都符合條件的用法
         0 < a(this.options.fixY).length &&
           ((this._fixY = a(this.options.fixY).offset().top),
+          // 這裏的a指代對象所在當前窗口，因此a(document)就是window
+          // a(document).scrollTop()即當前窗口的滾動條位置
           a(document).scrollTop() > this._fixY
+            // 這裏開始是儅 a(document).scrollTop() > this._fixY 為true的情況下執行的語句
             ? (this.$ele.addClass("active"),
+              // is(":hidden") 判斷是否為隱藏屬性對象
               a(this.$ele).is(":hidden")
+              // fadeIn 儅對象隱藏前提下開啓淡入效果，括號内為透明度由0到1的時長，按毫秒記
                 ? this.$ele.fadeIn(this.options.showSpeed)
                 : this.$ele.fadeIn(0))
+            // 這裏開始是儅 a(document).scrollTop() > this._fixY 為false的情況下執行的語句
             : (this.$ele.removeClass("active"),
               a(this.$ele).is(":hidden")
+              // fadeOut 儅對象顯示前提下開啓淡出效果，括號内為透明度由1到0的時長，按毫秒記
                 ? this.$ele.fadeOut(0)
                 : this.$ele.fadeOut(this.options.showSpeed)));
+
+
         0 < a(this.options.showOnly).length &&
           (a(document).scrollTop() + a(window).height() >
           a(this.options.showOnly).offset().top +
