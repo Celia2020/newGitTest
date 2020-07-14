@@ -13,7 +13,7 @@ function addLoadEvent(func){
 // JavaScript DOM編程藝術（第2版）上的實例
 // 第159頁
 function styleHeaderSiblings(){
-  // if(!)
+  if(!document.getElementsByTagName) return false;
   var h1List = document.getElementsByTagName("h1");
   var elem;
   for(let i=0; i<h1List.length; i++){

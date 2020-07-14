@@ -1,0 +1,42 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #000000;
+}
+table{
+  margin: auto;
+  border: 1px solid #699;
+}
+caption{
+  margin: auto;
+  padding: .2em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+th{
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+  border: 1px dotted #699;
+  background-color: #9cc;
+  color: #000;
+}
+th,td{
+  width: 10em;
+  padding: .5em;
+}
+
+// 以下適用沒有增刪的固定表格結構
+// 儅表格本身記錄被增刪改變後（特別是利用Js等進行改變后）
+// 很有可能出現css認知的奇偶行數和最終實現表格奇偶行數不匹配
+// 導致顯示效果出乎意料的結果
+
+// 奇數行
+// tr:nth-child(odd){
+//   background-color: #ffc;
+// }
+
+// 偶數行
+// tr:nth-child(even){
+//   background-color: #fff;
+// }
