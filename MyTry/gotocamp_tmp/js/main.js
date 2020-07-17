@@ -42,15 +42,15 @@ function onSubmit(e){
       days = days;
     }else{
       alert("泊数の入力エリアに半角正数字を入力してください。");
-      document.getElementById("days").value = "";
-      document.getElementById("days").select();
+      pagedays.value = "";
+      pagedays.select();
       return false;
     }
 
   }else{
     alert("旅行代金の入力エリアに半角数字を入力してください。");
-    document.getElementById("price").value = "";
-    document.getElementById("price").select();
+    pageprice.value = "";
+    pageprice.select();
     return false;
   }
 
@@ -95,7 +95,7 @@ function format(value){
   var leftValue = value;
   var lastValue = 0;
   var formatedValue;
-  var count=0;
+  var count = 0;
 
   while(leftValue != 0){
     thismo = leftValue % 1000;
