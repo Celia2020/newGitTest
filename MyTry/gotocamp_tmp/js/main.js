@@ -1,11 +1,21 @@
 var inputs = document.getElementsByTagName("input");
 const myForm = document.querySelector('#calc');
 myForm.addEventListener('submit', onSubmit);
+var resetBtn = document.getElementById("reset");
+resetBtn.addEventListener('click', resetData);
+
+var pagedays = document.getElementById("days");
 var pageprice = document.getElementById("price");
 var pagesubsidy = document.getElementById("subsidy");
 var pagesubsidyGOV = document.getElementById("subsidyGOV");
 var pagesubsidyAREA = document.getElementById("subsidyAREA");
 var pagerealpay = document.getElementById("realpay");
+
+function resetData(){
+  pageprice.value = "";
+  pageprice.select();
+  pagedays.value = "";
+}
 
 function onSubmit(e){
   e.preventDefault();
