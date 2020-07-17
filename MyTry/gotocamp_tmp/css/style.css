@@ -1,0 +1,155 @@
+h2,
+p {
+  text-align: center;
+  line-height: 1.8em;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 40px auto 10px;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+#calc ul {
+  width: 600px;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#calc ul li {
+  padding: 10px 20px 20px;
+  background-color: #c4c4c4;
+  -ms-flex-preferred-size: 42%;
+      flex-basis: 42%;
+}
+
+#calc ul li h3 {
+  font-size: 1.2em;
+  line-height: 3em;
+  text-align: center;
+}
+
+#calc ul li input {
+  width: 210px;
+  height: 34px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#calc ul li select {
+  width: 210px;
+  height: 40px;
+  text-align: center;
+  padding-left: 20px;
+  font-size: 1.2em;
+}
+
+#calc ul li span {
+  margin-left: 10px;
+}
+
+.btn {
+  width: 320px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn input {
+  width: 150px;
+  height: 40px;
+  border: 0;
+  background-color: #c4c4c4;
+}
+
+#resault ul {
+  width: 600px;
+  margin: 20px auto;
+}
+
+#resault ul li {
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f1f0f0;
+}
+
+#resault ul li h4 {
+  -webkit-box-flex: 9;
+      -ms-flex-positive: 9;
+          flex-grow: 9;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+#resault ul li h4 span {
+  font-size: 0.6em;
+  font-weight: normal;
+  display: block;
+}
+
+#resault ul li p {
+  font-weight: bold;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  width: 120px;
+  height: 35px;
+  background-color: #fff;
+}
+
+#resault ul li span {
+  vertical-align: middle;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+
+#resault ul li:last-child {
+  margin-top: 20px;
+  background-color: #cdcdcd;
+}
+
+#resault ul li:last-child p {
+  height: 25px;
+  margin-bottom: 0;
+}
+
+#resault ul li:last-child h4,
+#resault ul li:last-child span {
+  margin-top: 3px;
+}
+/*# sourceMappingURL=style.css.map */

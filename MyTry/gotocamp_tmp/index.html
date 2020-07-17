@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="apple-touch-icon" href="https://img.travel.rakuten.co.jp/smart/webclipIcon.png">
+  <!-- CSS for calendar function -->
+  <link rel="stylesheet" href="https://img.travel.rakuten.co.jp/share/rtl/css/util.calendar.css" media="all">
+  <!-- /CSS for calendar function -->
+
+  <!-- CSS for PC -->
+  <link rel="stylesheet" type="text/css" href="https://img.travel.rakuten.co.jp/share/common/css/style-pc.css" media="all and (min-width: 721px)">
+  <link rel="stylesheet" type="text/css" href="https://img.travel.rakuten.co.jp/share/common/css/style-sp.css" media="all and (min-width: 0px) and (max-width: 720px)">
+  <link rel="stylesheet" href="https://img.travel.rakuten.co.jp/share/common/css/common.css" media="all and (min-width: 721px)">
+  <link rel="stylesheet" href="https://img.travel.rakuten.co.jp/special/smap/css/pc.css" media="all and (min-width: 721px)">
+  <!-- /CSS for PC -->
+  <!-- CSS for smartphone -->
+  <link rel="stylesheet" href="https://img.travel.rakuten.co.jp/share/common/css/sp_reset.css" media="all and (min-width: 0px) and (max-width: 720px)">
+  <link rel="stylesheet" href="https://img.travel.rakuten.co.jp/special/smap/css/sp.css" media="all and (min-width: 0px) and (max-width: 720px)">
+  <!-- /CSS for smartphone -->
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<div id="widewrapper">
+  <div id="contentsArea">
+    <h2>かんたん割引シミュレーター</h2>
+    <p>旅行代金の合計、泊数、人数を選択するだけ！<br>どれくらいお得になるのか計算してみましょう。</p>
+    <form id="calc">
+      <ul>
+        <li>
+          <h3>旅行代金</h3>
+          <div><input type="text" id="price" name="price" value=""><span>円</span></div>
+        </li>
+        <li>
+          <h3>泊数</h3>
+          <div><input type="text" id="days" name="days" value="">
+            <!-- <select id="days">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select> -->
+          <span>泊</span></div>
+        </li>
+      </ul>
+      <div class="btn"><input type="submit" value="計算"><input id="reset" type="button" value="リセット"></div>
+    </form>
+    <section id="resault">
+      <ul>
+        <li>
+          <h4>Go To トラベルキャンペーン補助額<span>※ 旅行代金の50％相当、上限1人あたり1泊につき20,000円</span></h4>
+          <p id="subsidy"></p>
+          <span>円</span>
+        </li>
+        <li>
+          <h4>35%OFFクーポン利用の割引額<span>※ 上限1人あたり1泊につき14,000円</span></h4>
+          <p id="subsidyGOV"></p>
+          <span>円</span>
+        </li>
+        <li>
+          <h4>現地で使えるクーポン<span>※ 旅行代金の15%相当、上限1人あたり1泊につき6,000円</span></h4>
+          <p id="subsidyAREA"></p>
+          <span>円</span>
+        </li>
+        <li>
+          <h4>お客様負担額</h4>
+          <p id="realpay"></p>
+          <span>円</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+h2,
+p {
+  text-align: center;
+  line-height: 1.8em;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 40px auto 10px;
+}
+p {
+  font-size: 0.8em;
+}
+
+#calc {
+  ul {
+    width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    li {
+      padding: 10px 20px 20px;
+      background-color: #c4c4c4;
+      flex-basis: 42%;
+      h3 {
+        font-size: 1.2em;
+        line-height: 3em;
+        text-align: center;
+      }
+      input {
+        width: 210px;
+        height: 34px;
+        text-align: center;
+        font-size: 1.2em;
+      }
+      select {
+        width: 210px;
+        height: 40px;
+        text-align: center;
+        padding-left: 20px;
+        font-size: 1.2em;
+      }
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.btn {
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  input {
+    width: 150px;
+    height: 40px;
+    border: 0;
+    background-color: #c4c4c4;
+  }
+}
+#resault {
+  ul {
+    width: 600px;
+    margin: 20px auto;
+    li {
+      margin: 0 auto;
+      padding: 20px;
+      display: block;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      justify-content: center;
+      background-color: #f1f0f0;
+      // justify-content: space-between;
+      h4 {
+        flex-grow: 9;
+        font-size: 1em;
+        // line-height: 1.2em;
+        letter-spacing: 2px;
+        span {
+          font-size: 0.6em;
+          font-weight: normal;
+          display: block;
+        }
+      }
+      p {
+        font-weight: bold;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        width: 120px;
+        height: 35px;
+        background-color: #fff;
+      }
+      span {
+        vertical-align: middle;
+        align-content: center;
+        padding-left: 10px;
+        margin-top: 8px;
+      }
+      &:last-child {
+        margin-top: 20px;
+        background-color: #cdcdcd;
+        p {
+          height: 25px;
+          margin-bottom: 0;
+        }
+        h4,
+        span {
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+}
