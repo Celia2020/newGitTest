@@ -1,6 +1,7 @@
 var inputs = document.getElementsByTagName("input");
 const myForm = document.querySelector('#calc');
 myForm.addEventListener('submit', onSubmit);
+var pageprice = document.getElementById("price");
 var pagesubsidy = document.getElementById("subsidy");
 var pagesubsidyGOV = document.getElementById("subsidyGOV");
 var pagesubsidyAREA = document.getElementById("subsidyAREA");
@@ -57,6 +58,7 @@ function onSubmit(e){
   }
   var realsubsidy = realCPgov + realCParea;
 
+  pageprice.value = format(oldprice);
   pagesubsidy.innerHTML = format(realsubsidy);
   pagesubsidyGOV.innerHTML = format(realCPgov);
   pagesubsidyAREA.innerHTML = format(realCParea);
