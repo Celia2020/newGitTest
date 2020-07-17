@@ -1,18 +1,10 @@
 var inputs = document.getElementsByTagName("input");
-// used by select option
-// var day = document.getElementsByTagName("option");
 const myForm = document.querySelector('#calc');
 myForm.addEventListener('submit', onSubmit);
 var pagesubsidy = document.getElementById("subsidy");
 var pagesubsidyGOV = document.getElementById("subsidyGOV");
 var pagesubsidyAREA = document.getElementById("subsidyAREA");
 var pagerealpay = document.getElementById("realpay");
-
-// var formReset = document.getElementById("reset");
-// formReset.addEventListener('onclick',reset);
-// function reset(){
-//   document.getElementById("calc").reset();
-// }
 
 function onSubmit(e){
   e.preventDefault();
@@ -25,12 +17,7 @@ function onSubmit(e){
     }
     if(inputs[i].name == "days"){
       var days = inputs[i].value;
-      // console.log(days);
     }
-    // used by select option
-    // if(day[i].selected){
-    //   days = day[i].value;
-    // }
   }  
   const maxhigh = 40000 * days;
 
@@ -75,14 +62,7 @@ function onSubmit(e){
   pagesubsidyAREA.innerHTML = format(realCParea);
 
   pagerealpay.innerHTML = format(realPaid);
-
-  // console.log("oldprice = "+oldprice);
-  // console.log("price = "+price);
-//   console.log("realsubsidy 2 = "+realsubsidy);
-//   console.log("realCPgov 2 = "+realCPgov);
-//   console.log("realCParea 2 = "+realCParea);
-//   console.log("realPaid 2 = "+realPaid);
-// }
+}
 
 function realValue(unitValue,oldValue){
   var mo = oldValue % unitValue;
@@ -104,8 +84,6 @@ function format(value){
   var lastValue = 0;
   var formatedValue;
   var count=0;
-
-  console.log("out while leftValue = "+leftValue);
 
   while(leftValue != 0){
     thismo = leftValue % 1000;
