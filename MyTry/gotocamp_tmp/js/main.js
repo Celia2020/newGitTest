@@ -31,9 +31,11 @@ function onSubmit(e){
       price += priceArr[i];
     }
   }
-  oldprice = price;
 
-  if (!isNaN(price) && price.length>0) {
+  oldprice = price;
+  console.log(oldprice);
+
+  if (!isNaN(price) && price.length>0 && price != 0) {
 
     if (price > maxhigh) {
       price = maxhigh;
@@ -42,19 +44,21 @@ function onSubmit(e){
     if (days > 0 && days == parseInt(days)){
       days = days;
     }else{
-      alert("泊数の入力エリアに半角正数字を入力してください。");
+      alert("泊数の入力エリアに0以外の半角正数字を入力してください。");
       pagedays.value = "";
       pagedays.select();
     }
 
+
+
   }else{
-    alert("旅行代金の入力エリアに半角数字を入力してください。");
+    alert("旅行代金の入力エリアに0以外の半角数字を入力してください。");
     pageprice.value = "";
     pageprice.select();
   }
 
-  // const subsidy = parseInt(price * 0.5);
   var cpValue = 1000;
+  // const subsidy = parseInt(price * 0.5);
   const subsidyGOV = parseInt(price * 0.35);
   var realCPgov = realValue(cpValue,subsidyGOV);
   const subsidyAREA = parseInt(price * 0.5 - realCPgov);
@@ -68,11 +72,16 @@ function onSubmit(e){
   var realsubsidy = realCPgov + realCParea;
 
   pageprice.value = format(oldprice);
+
   pagesubsidy.innerHTML = format(realsubsidy);
   pagesubsidyGOV.innerHTML = format(realCPgov);
   pagesubsidyAREA.innerHTML = format(realCParea);
 
   pagerealpay.innerHTML = format(realPaid);
+}
+
+function calcPrice(){
+  
 }
 
 function realValue(unitValue,oldValue){
