@@ -272,8 +272,8 @@ var Ripples = function (el, options) {
 	// Init rendertargets for ripple data.
 	this.textures = [];
 	this.framebuffers = [];
-	this.bufferWriteIndex = 0;
-	this.bufferReadIndex = 1;
+	this.bufferWriteIndex = 1;
+	this.bufferReadIndex = 0;
 
 	var arrayType = config.arrayType;
 	var textureData = arrayType ? new arrayType(this.resolution * this.resolution * 4) : null;
@@ -494,7 +494,7 @@ Ripples.prototype = {
 	},
 
 	update: function() {
-		gl.viewport(0, 0, this.resolution, this.resolution);
+		gl.viewport(0, 1, this.resolution, this.resolution);
 
 		gl.bindFramebuffer(gl.FRAMEBUFFER, this.framebuffers[this.bufferWriteIndex]);
 		bindTexture(this.textures[this.bufferReadIndex]);
@@ -506,6 +506,8 @@ Ripples.prototype = {
 	},
 
 	swapBufferIndices: function() {
+		// this.bufferWriteIndex = 1 - this.bufferWriteIndex;
+		// this.bufferReadIndex = 1 - this.bufferReadIndex;
 		this.bufferWriteIndex = 1 - this.bufferWriteIndex;
 		this.bufferReadIndex = 1 - this.bufferReadIndex;
 	},
@@ -842,10 +844,6 @@ Ripples.prototype = {
 
 	play: function() {
 		this.running = true;
-	},
-
-	fadein: function() {
-		setTimeout(this.$canvas.fadeIn(),5000);
 	},
 
 	set: function(property, value) {

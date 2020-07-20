@@ -29,22 +29,49 @@ main {
 	display: inline-block;
 	vertical-align: middle;
 	background: url(img/bg.jpg);
+	width: 500px;
+	height: 500px;
 	padding:  100px;
-	max-width: 500px;
 	background-size: 100% 100%;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-	animation: easein-h2 5s 1 ease-in-out forwards;
+	animation: maineaseinout 6s 1 ease-in-out forwards;
 }
-@keyframes easein-h2 {
+.bg{
+	display: inline-block;
+	vertical-align: middle;
+	background: url(img/bg.jpg);
+	width: 700px;
+	height: 700px;
+	background-size: 100% 100%;
+	animation: bgaseinout 6s  ease-in-out forwards;
+}
+@keyframes maineaseinout {
 	0% {
 		opacity: 0;
+	}
+	30% {
+		opacity: .8;
 	}
 	50% {
 		opacity: 1;
 	}
 	100% {
+		opacity: 0;
+	}
+}
+@keyframes bgaseinout {
+	0% {
+		opacity: 0;
+	}
+	30% {
 		opacity: .8;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 h1 {
@@ -111,25 +138,7 @@ code { font-size: 0.8em; display: inline; }
 </head>
 <body>
 
-<main>
-	<header>
-		<h1>jQuery Ripples</h1>
-		<h2>A simple WebGL-based ripple effect.</h2>
-	</header>
-	<p>Background images are often boring. Use this effect to make your static CSS background images more interactive!</p>
-	<p>It's as easy as:</p>
-
-	<pre><code>
-$(<span class="code-string">'body'</span>).ripples(<span class="code-cbracket">{</span>
-	resolution: <span class="code-number">512</span>,
-	dropRadius: <span class="code-number">20</span>,
-	perturbance: <span class="code-number">0.04</span>,
-<span class="code-cbracket">}</span>);
-	</code></pre>
-
-
-	<p>Download or fork this effect at <a href="//github.com/sirxemic/jquery.ripples/">Github</a>.</p>
-</main>
+	<div class="bg"><main></main></div>
 
 
 <div class="error"></div>
@@ -160,6 +169,7 @@ $(document).ready(function() {
 	setInterval(function() {
 		var $el = $('main');
 		var x = Math.random() * $el.outerWidth();
+		// var y = Math.random() * $el.outerHeight();
 		var y = Math.random() * $el.outerHeight();
 		var dropRadius = 70;
 		var strength = 0.01;
@@ -170,7 +180,7 @@ $(document).ready(function() {
 	setTimeout(function(){
 		$('body, main').ripples('destroy');
 		$(this).hide();
-	},5000);
+	},6000);
 	
 });
 </script>
