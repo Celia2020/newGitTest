@@ -1,4 +1,3 @@
-var inputs = document.getElementsByTagName("input");
 const myForm = document.querySelector('#calc');
 myForm.addEventListener('submit', onSubmit);
 var resetBtn = document.getElementById("reset");
@@ -11,6 +10,7 @@ var pagesubsidyGOV = document.getElementById("subsidyGOV");
 var pagesubsidyAREA = document.getElementById("subsidyAREA");
 var pagerealpay = document.getElementById("realpay");
 
+
 function resetData(){
   pageprice.value = "";
   pageprice.select();
@@ -20,16 +20,9 @@ function resetData(){
 function onSubmit(e){
   e.preventDefault();
 
-  var oldprice,price,days;
-  for(let i=0; i<inputs.length; i++){
-    if(inputs[i].name == "price"){
-      oldprice = inputs[i].value;
-      price = inputs[i].value;
-    }
-    if(inputs[i].name == "days"){
-      var days = inputs[i].value;
-    }
-  }  
+  var oldprice = pageprice.value;
+  var price = pageprice.value;
+  var days = pagedays.value;
   const maxhigh = 40000 * days;
 
   if (!isNaN(price) && price.length>0) {
