@@ -13,8 +13,8 @@ var pagerealpay = document.getElementById("realpay");
 
 function resetData(){
   pageprice.value = "";
-  pageprice.select();
   pagedays.value = "";
+  pageprice.select();
 }
 
 function onSubmit(e){
@@ -35,7 +35,7 @@ function onSubmit(e){
   oldprice = price;
   console.log(oldprice);
 
-  if (!isNaN(price) && price.length>0 && price != 0) {
+  if (!isNaN(price) && price.length>0 && price > 0) {
 
     if (price > maxhigh) {
       price = maxhigh;
@@ -47,6 +47,7 @@ function onSubmit(e){
       alert("泊数の入力エリアに0以外の半角正数字を入力してください。");
       pagedays.value = "";
       pagedays.select();
+      price = 0;
     }
 
 
@@ -55,6 +56,7 @@ function onSubmit(e){
     alert("旅行代金の入力エリアに0以外の半角数字を入力してください。");
     pageprice.value = "";
     pageprice.select();
+    price = 0;
   }
 
   var cpValue = 1000;
@@ -71,7 +73,11 @@ function onSubmit(e){
   }
   var realsubsidy = realCPgov + realCParea;
 
-  pageprice.value = format(oldprice);
+  if(price != 0){
+    pageprice.value = format(oldprice);
+  }else{
+    pageprice.value = oldprice;
+  }
 
   pagesubsidy.innerHTML = format(realsubsidy);
   pagesubsidyGOV.innerHTML = format(realCPgov);
