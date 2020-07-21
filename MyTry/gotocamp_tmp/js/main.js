@@ -10,7 +10,6 @@ var pagesubsidyGOV = document.getElementById("subsidyGOV");
 var pagesubsidyAREA = document.getElementById("subsidyAREA");
 var pagerealpay = document.getElementById("realpay");
 
-
 function resetData(){
   pageprice.value = "";
   pagedays.value = "";
@@ -50,8 +49,6 @@ function onSubmit(e){
       price = 0;
     }
 
-
-
   }else{
     alert("旅行代金の入力エリアに0以外の半角数字を入力してください。");
     pageprice.value = "";
@@ -84,10 +81,6 @@ function onSubmit(e){
   pagesubsidyAREA.innerHTML = format(realCParea);
 
   pagerealpay.innerHTML = format(realPaid);
-}
-
-function calcPrice(){
-  
 }
 
 function realValue(unitValue,oldValue){
